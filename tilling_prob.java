@@ -1,5 +1,5 @@
 public class tilling_prob {
-    public static int tilling(int n){//for 2xn size tile
+    public static int tilling(int n){//for 2xn size floor
         if (n==0||n==1) {
             return 1;//when 2x1 space present or no space present
         }
