@@ -43,7 +43,8 @@ public class Graph_topo_sort {
     for(int i=0;i<graph[curr].size();i++){
         Edge e=graph[curr].get(i);
         if(!vis[e.dest]){
-            
+            s.push(e.dest);
+            topo_sortUtil(graph, vis, s, e.dest);
         }
     }
    }

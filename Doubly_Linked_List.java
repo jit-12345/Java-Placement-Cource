@@ -26,6 +26,17 @@ public class Doubly_Linked_List {
         head=head.next;
         head.prev=null;
     }
+    public void removeLast(){
+        if(head==null){
+            System.out.println("The LinkedList is Empty!");
+            return;
+        }
+        tail=tail.prev;
+        tail.next.prev=null;
+        tail.next=null;
+        return;
+
+    }
     public void printll(){
         Node temp=head;
         System.out.print("The LinkedList element are");
@@ -55,6 +66,8 @@ public class Doubly_Linked_List {
         dll.add(1);
         dll.add(8);
         dll.add(2);
+        dll.printll();
+        dll.removeLast();
         dll.printll();
         dll.reverse_dll();
         dll.printll();
