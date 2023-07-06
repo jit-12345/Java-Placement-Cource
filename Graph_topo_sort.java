@@ -37,16 +37,20 @@ public class Graph_topo_sort {
             topo_sortUtil(graph,vis,s,i);
         }
     }
+    while (!s.empty()) {
+        System.out.print(s.pop()+" ");
+    }
    }
    public static void topo_sortUtil(ArrayList<Edge>graph[],boolean vis[],Stack<Integer> s,int curr){
     vis[curr]=true;
     for(int i=0;i<graph[curr].size();i++){
         Edge e=graph[curr].get(i);
         if(!vis[e.dest]){
-            s.push(e.dest);
+            
             topo_sortUtil(graph, vis, s, e.dest);
         }
     }
+    s.push(curr);
    }
    public static void main(String[] args) {
     ArrayList<Edge> graph[]=new ArrayList[6];
